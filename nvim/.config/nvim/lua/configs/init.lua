@@ -1,0 +1,8 @@
+require('configs.gitsigns')
+require('configs.lualine')
+require('configs.lsp')
+require('configs.telescope')
+require('configs.treesitter')
+require('configs.tokyonight')
+require('configs.nvim-tree')
+require('configs.bufferline')

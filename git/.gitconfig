@@ -1,0 +1,10 @@
+[user]
+	name = Mike Dent 
+	email = nobody@nobody.com 
+[core]
+	excludesfile = ~/.gitignore_global
+    editor = nvim
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
