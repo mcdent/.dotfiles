@@ -46,7 +46,8 @@ if command -v zsh >/dev/null; then
 else
     echo -e "\e[1mZsh is not installed.\e[0m"
 fi
-
+# Create a symlink of our ~/.bin folder
+ln -sf $HOME/.dotfiles/bin $HOME/.bin
 # use zsh as default shell
 sudo chsh -s $(which zsh) $USER
 

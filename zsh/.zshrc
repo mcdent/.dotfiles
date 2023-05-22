@@ -53,7 +53,7 @@ export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --border --margin=1 --pad
 # export PATH=${PATH}:${HOME}/go/bin
 
 export BAT_THEME="gruvbox-dark"
-
+export PATH="$PATH:/usr/sbin:/usr/local/bin:$HOME/bin:$HOME/.bin"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
