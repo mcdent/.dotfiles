@@ -2,7 +2,6 @@
 " --- General 
 
 let mapleader = " "
-let mapleader = " "
 
 set termguicolors
 set tabstop=4 
@@ -32,12 +31,7 @@ set updatetime=250
 set encoding=UTF-8
 set mouse=a
 " Configure copy/paste
-set clipboard+=unnamedplus
-nnoremap <C-c> "+y
-vnoremap <C-c> "+y
-nnoremap <C-v> "+p
-vnoremap <C-v> "+p
-
+set clipboard=unnamedplus
 
 " --- Plugins
 
@@ -102,7 +96,8 @@ nnoremap <leader>l :wincmd l<Cr>
 nnoremap <silent><leader>[ :BufferLineCyclePrev<Cr>
 nnoremap <silent><leader>] :BufferLineCycleNext<Cr>
 nnoremap <silent><leader>q :bdelete<Cr>
-
+" Toggles off/on line number. Better for copy/paste out of vim.
+nnoremap <silent><leader>L :set relativenumber! <bar> set nu!<CR>
 
 " --- Autocommands
 
