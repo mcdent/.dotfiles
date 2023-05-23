@@ -48,7 +48,7 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' } " Color scheme
 " Lsp
 Plug 'neovim/nvim-lspconfig'     
 Plug 'jose-elias-alvarez/null-ls.nvim'
-Plug 'bash-lsp/bash-language-server'
+" Plug 'bash-lsp/bash-language-server'
 " Autocompletion
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -62,7 +62,7 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-
+" Plug 'redhat-developer/yaml-language-server'
 
 call plug#end()
 
@@ -75,12 +75,19 @@ call plug#end()
 
 lua require('configs')
 
+" Attach to the bash language server
 lua << EOF
 require'lspconfig'.bashls.setup{
     cmd = { "bash-language-server", "start" },
     filetypes = { "sh", "bash" },
 }
 EOF
+
+" Attah to the yaml language server
+lua << EOF
+require'lspconfig'.yamlls.setup{}
+EOF
+
 " --- Colors
 
 set background=dark

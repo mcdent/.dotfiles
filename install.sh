@@ -21,6 +21,7 @@ nix-env -iA \
 	nixpkgs.direnv \
 	nixpkgs.trash-cli \
     nixpkgs.nodePackages_latest.bash-language-server \
+    nixpkgs.yaml-language-server \
     nixpkgs.xclip \
     nixpkgs.shellcheck
 
