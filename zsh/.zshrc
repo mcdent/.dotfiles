@@ -44,6 +44,13 @@ elif [[ -e "/usr/bin/docker" ]]; then
 # DIRCOLORS (MacOS)
 export CLICOLOR=1
 
+# History
+HISTFILE=~/.zhistory
+HISTSIZE=1000
+SAVEHIST=1000
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+
 # FZF
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --border --margin=1 --padding=1"
@@ -59,5 +66,3 @@ export PATH="$PATH:/usr/sbin:/usr/local/bin:$HOME/bin:$HOME/.bin"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
-if [ -e /home/mike/.nix-profile/etc/profile.d/nix.sh ]; then . /home/mike/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
