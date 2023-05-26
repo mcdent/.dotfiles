@@ -1,29 +1,31 @@
 # install nix
-curl -L https://nixos.org/nix/install | sh
-
+# curl -L https://nixos.org/nix/install | sh
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix/tag/v0.9.0 | sh -s -- install
 # source nix
-. ~/.nix-profile/etc/profile.d/nix.sh
-
+# . ~/.nix-profile/etc/profile.d/nix.sh
+. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 # install packages
-nix-env -iA \
-	nixpkgs.zsh \
-	nixpkgs.antibody \
-	nixpkgs.git \
-	nixpkgs.neovim \
-	nixpkgs.tmux \
-	nixpkgs.stow \
-	nixpkgs.yarn \
-	nixpkgs.fzf \
-	nixpkgs.ripgrep \
-	nixpkgs.bat \
-	nixpkgs.gnumake \
-	nixpkgs.gcc \
-	nixpkgs.direnv \
-	nixpkgs.trash-cli \
-    nixpkgs.nodePackages_latest.bash-language-server \
-    nixpkgs.yaml-language-server \
-    nixpkgs.xclip \
-    nixpkgs.shellcheck
+nix profile install \
+    nixpkgs#zsh \
+     nixpkgs#antibody \
+     nixpkgs#git \
+     nixpkgs#neovim \
+     nixpkgs#tmux \
+     nixpkgs#stow \
+     nixpkgs#yarn \
+     nixpkgs#fzf \
+     nixpkgs#ripgrep \
+     nixpkgs#bat \                                                                                     
+     nixpkgs#gnumake \
+     nixpkgs#gcc \
+     nixpkgs#direnv \
+     nixpkgs#trash-cli \
+     nixpkgs#nodePackages_latest.bash-language-server \
+     nixpkgs#yaml-language-server \
+     nixpkgs#xclip \
+     nixpkgs#nodejs-18_x \
+     nixpkgs#nodePackages_latest.prettier \
+     nixpkgs#shellcheck
 
 # stow dotfiles
 stow git
@@ -59,4 +61,4 @@ antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 nvim --headless +PlugInstall +qall
 
 # Use kitty terminal on MacOS
-# [ `uname -s` = 'Darwin' ] && stow kitty
+[ `uname -s` = 'Darwin' ] nix profile install nixpkgs#kitty && stow kitty
