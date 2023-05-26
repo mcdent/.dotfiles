@@ -1,4 +1,6 @@
 # .dotfiles
+WARNING! Make sure you have access to the host you are running this on, as a different user, in case you
+lock yourself out! 
 
 1. Clone this repository
 2. Run `install.sh`
