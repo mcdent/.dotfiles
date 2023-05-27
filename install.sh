@@ -142,3 +142,5 @@ antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 echo "You may see some errors below as we try to install the NeoVim plugins, do not be alarmed!"
 sleep 2
 nvim --headless +PlugInstall +qall
+#
+echo "Almost done. Please log out and back in again to configure zsh etc"
