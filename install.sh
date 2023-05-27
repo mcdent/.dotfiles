@@ -57,6 +57,7 @@ nix profile install \
      nixpkgs#shellcheck
 sleep 2
 # stow dotfiles
+echo "Using stow to create symlinks to config files..."
 stow git
 stow nvim
 stow tmux
