@@ -86,7 +86,6 @@ sleep 3
 # install packages specific to Linux here.
 nix profile install \
     nixpkgs#zsh \
-    nixpkgs#antibody \
      nixpkgs#git \
      nixpkgs#neovim \
      nixpkgs#tmux \
