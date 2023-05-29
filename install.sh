@@ -44,7 +44,6 @@ if [[ $(uname -s) =~ "Darwin" ]]; then
 echo "Installing MacOS packages..."
 sleep 1
   nix profile install \
-       nixpkgs#antibody \
        nixpkgs#git \
        nixpkgs#kitty \
        nixpkgs#neovim \
@@ -87,7 +86,7 @@ sleep 3
 # install packages specific to Linux here.
 nix profile install \
     nixpkgs#zsh \
-     nixpkgs#antibody \
+    nixpkgs#antibody \
      nixpkgs#git \
      nixpkgs#neovim \
      nixpkgs#tmux \
@@ -135,12 +134,16 @@ ln -sf "$HOME/.dotfiles/bin" "$HOME/.bin"
 # use zsh as default shell
 sudo chsh -s "$(which zsh)" "$USER"
 
-# bundle zsh plugins
-antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+# Pull down Antidote, which is a zsh package manager. (replaces Antibody)
+echo "Installing/configuring antidote..."
+git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+chmod +x ~/.antidote/antidote && sed -i "1s|.*|#\!$SHELL|" antidote && ln -sfT ~/.antidote/antidote ~/.bin/antidote
+antidote bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 
 # install neovim plugins
 echo "You may see some errors below as we try to install the NeoVim plugins, do not be alarmed!"
 sleep 2
 nvim --headless +PlugInstall +qall
 #
-echo "Almost done. Please log out and back in again to configure zsh etc"
+echo "Almost done. Please log out and back in again to configure zsh etc."
+echo "You may also need to open neovim to complete Plugin installation."
