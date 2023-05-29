@@ -40,7 +40,9 @@ elif [[ -e "/usr/bin/docker" ]]; then
      alias d='docker'
  fi
  alias last='last | head'
- alias llh='ls -l | head'
+ alias llh='ls -lt | head'
+ alias history='history 40'
+ alias h='history 40'
 # DIRCOLORS (MacOS)
 export CLICOLOR=1
 
