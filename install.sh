@@ -136,7 +136,8 @@ sudo chsh -s "$(which zsh)" "$USER"
 # Pull down Antidote, which is a zsh package manager. (replaces Antibody)
 echo "Installing/configuring antidote..."
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
-chmod +x ~/.antidote/antidote && sed -i "1s|.*|#\!$SHELL|" antidote && ln -sfT ~/.antidote/antidote ~/.bin/antidote
+chmod +x ~/.antidote/antidote && sed -i "1s|.*|#\!$SHELL|" ~/.antidote/antidote && ln -sfT ~/.antidote/antidote ~/.bin/antidote
+sleep 1
 antidote bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 
 # install neovim plugins
