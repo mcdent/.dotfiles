@@ -42,11 +42,10 @@ elif [[ -e "/usr/bin/docker" ]]; then
  alias last='last | head'
  alias llh='ls -lt | head'
  alias k=kubectl
- 
+ alias history='history |tail -n 40'
+ alias h='history | tail -n 40'
 # MacOS only aliases.
-if [[ $(uname -s) =~ 'Darwin']; then
- alias history='history 40'
- alias h='history 40'
+if [[ $(uname -s) =~ 'Darwin' ]]; then
 fi
 
 # DIRCOLORS (MacOS)
