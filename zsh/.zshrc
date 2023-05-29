@@ -43,6 +43,7 @@ elif [[ -e "/usr/bin/docker" ]]; then
  alias llh='ls -lt | head'
  alias history='history 40'
  alias h='history 40'
+ alias k=kubectl
 # DIRCOLORS (MacOS)
 export CLICOLOR=1
 
