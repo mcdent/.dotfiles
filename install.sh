@@ -138,9 +138,9 @@ echo "Installing/configuring antidote..."
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 # Account for slight difference between linux uname and darwin uname.
 if [[ $(uname -s) =~ 'Darwin' ]]; then
-    chmod +x ~/.antidote/antidote && sed -i "" "1s|.*|#\!$HOME/.nix-profile/bin/zsh|"  ~/.antidote/antidote && ln -sfT ~/.antidote/antidote ~/.bin/antidote
+    chmod +x ~/.antidote/antidote && sed -i "" "1s|.*|#\!$HOME/.nix-profile/bin/zsh|"  ~/.antidote/antidote && ln -sf ~/.antidote/antidote ~/.bin/antidote
     else
-    chmod +x ~/.antidote/antidote && sed -i "1s|.*|#\!$HOME/.nix-profile/bin/zsh|" ~/.antidote/antidote && ln -sfT ~/.antidote/antidote ~/.bin/antidote
+    chmod +x ~/.antidote/antidote && sed -i "1s|.*|#\!$HOME/.nix-profile/bin/zsh|" ~/.antidote/antidote && ln -sf ~/.antidote/antidote ~/.bin/antidote
 fi
 
 sleep 1
