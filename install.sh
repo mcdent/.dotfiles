@@ -24,7 +24,7 @@ else
     # source nix
     . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 fi
-
+echo "You don't need to run the above command, I have already just started the nix-daemon..."
 read -r -p "Do you want to continue with package installation? (Y/n): " decision
 if [[ $decision != "Y" && $decision != "y" ]]; then
     echo "Aborting, done, no packages to install!..."
