@@ -5,7 +5,7 @@ It should try to detect platform you are installing on, either linux or MacOS an
 install differnt packages if required.
 
 WARNING! Make sure you have access to the host you are running this on, as a different user/account, in case you
-lock yourself out! 
+lock yourself out! Also ensure you can sudo or su on that account!
 
 1. Clone this repository
 2. Run `install.sh`
