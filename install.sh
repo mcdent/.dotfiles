@@ -144,7 +144,7 @@ if [[ $(uname -s) =~ 'Darwin' ]]; then
 fi
 
 sleep 1
-antidote bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+~/.antidote/antidote bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 
 # install neovim plugins
 echo "You may see some errors below as we try to install the NeoVim plugins, do not be alarmed!"
