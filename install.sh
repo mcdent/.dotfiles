@@ -62,7 +62,8 @@ sleep 1
        nixpkgs#xclip \
        nixpkgs#nodejs-18_x \
        nixpkgs#nodePackages_latest.prettier \
-       nixpkgs#shellcheck
+       nixpkgs#shellcheck \
+       nixpkgs#btop
 
   sleep 2
   # stow dotfiles
@@ -103,7 +104,9 @@ nix profile install \
      nixpkgs#xclip \
      nixpkgs#nodejs-18_x \
      nixpkgs#nodePackages_latest.prettier \
-     nixpkgs#shellcheck
+     nixpkgs#shellcheck \
+     nixpkgs#btop
+     
 sleep 2
 # stow dotfiles
 stow git
